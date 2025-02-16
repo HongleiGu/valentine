@@ -87,7 +87,7 @@ export default function Home() {
   const pushMultiplierY = 30;
 
 
-  const handleRedClick = () => {
+  const handleBlueClick = () => {
     if (scale < maxScale) {
       setScale(scale + 1);
     }
@@ -115,7 +115,6 @@ export default function Home() {
       </div>
       <div className="flex flex-row items-center justify-between mt-4">
         <button
-          onClick={handleRedClick}
           style={{ 
             transform: `scale(${scale})`,
             marginRight: `${(scale) * pushMultiplierX}px`,
@@ -126,6 +125,7 @@ export default function Home() {
           {data[scale-1].red}
         </button>
         <button
+          onClick={handleBlueClick}
           className="bg-blue-500 text-white py-2 px-4 rounded flex-grow transition-transform duration-300"
           style={{
             transform: `translateX(${(scale) * (pushMultiplierX)}px)`,
